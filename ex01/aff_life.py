@@ -12,13 +12,12 @@ def print_graph(data_set: pd.DataFrame, campus: str):
     rows = sub_set.columns
     try:
         columns = sub_set.loc[campus]
-        plt.plot(rows, columns, label=campus)
+        plt.plot(rows, columns)
         plt.title(f"{campus} Life Expectancy Projections")
         plt.xlabel("Year")
         plt.xticks(rows[::40])
         plt.ylabel("Life expectancy")
         plt.yticks(range(30, 91, 10))
-        plt.legend()
         plt.tight_layout()
         plt.show()
     except AssertionError as e:

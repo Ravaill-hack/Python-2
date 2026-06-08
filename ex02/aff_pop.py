@@ -31,6 +31,7 @@ def print_graph(data_set: pd.DataFrame, country1: str, country2: str):
 
         plt.plot(rows, columns1, label=country1)
         plt.plot(rows, columns2, label=country2)
+        plt.margins(x=0.1, y=0.1)
         plt.title("Population Projections")
 
         plt.xlabel("Year")
@@ -43,7 +44,6 @@ def print_graph(data_set: pd.DataFrame, country1: str, country2: str):
         plt.yticks(y_ticks, ["{:,.0f}M".format(pop / 1e6) for pop in y_ticks])
 
         plt.legend(loc="lower right")
-        plt.tight_layout()
         plt.show()
     except AssertionError as e:
         print(f"AssertionError: {e}")
